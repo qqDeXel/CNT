@@ -67,3 +67,35 @@ for (var i = 1; i <= n; i++) {
     factorial *= i;
     console.log(i = factorial);
 }
+function add(q, e) {
+    return q + e;
+}
+console.log("1 + 2 =", add(1, 2));
+console.log("11 + 12 =", add(11, 12));
+function greet(name) {
+    console.log("Привет,", name);
+}
+greet("Иван");
+function isEven(number) {
+    return number % 2 === 0;
+}
+console.log("4:", isEven(4));
+console.log("7:", isEven(7));
+function square(number) {
+    return number * number;
+}
+console.log("5:", square(5));
+console.log("3:", square(3));
+function compareNumbers(j, k) {
+    if (j > k) {
+        return "первое больше";
+    }
+    else if (k > j) {
+        return "второе больше";
+    }
+    else {
+        return "равны";
+    }
+}
+console.log("1, 2:", compareNumbers(1, 2));
+console.log("2, 7:", compareNumbers(2, 7));
