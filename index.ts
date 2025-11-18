@@ -145,3 +145,13 @@ if (n < 18) {
   // @ts-ignore
   process.exit();
 });
+
+function calculate(a: number, b: number, operator: string): number {
+    switch (operator) {
+      case "+": return a + b;
+      case "-": return a - b;
+      case "*": return a * b;
+      case "/": return a / b;
+      default: throw new Error("Invalid operator");
+    }
+  }

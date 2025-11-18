@@ -115,3 +115,12 @@ process.stdin.once("data", function (d) {
     // @ts-ignore
     process.exit();
 });
+function calculate(a, b, operator) {
+    switch (operator) {
+        case "+": return a + b;
+        case "-": return a - b;
+        case "*": return a * b;
+        case "/": return a / b;
+        default: throw new Error("Invalid operator");
+    }
+}
