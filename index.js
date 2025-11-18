@@ -99,3 +99,19 @@ function compareNumbers(j, k) {
 }
 console.log("1, 2:", compareNumbers(1, 2));
 console.log("2, 7:", compareNumbers(2, 7));
+console.log("Возраст:");
+// @ts-ignore
+process.stdin.once("data", function (d) {
+    var n = Number(d);
+    if (n < 18) {
+        console.log("Доступ запрещён");
+    }
+    else {
+        console.log("Таблица умножения:");
+        for (var i = 1; i <= 10; i++) {
+            console.log(n + " × " + i + " = " + (n * i));
+        }
+    }
+    // @ts-ignore
+    process.exit();
+});
