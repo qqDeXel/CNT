@@ -133,7 +133,7 @@ console.log("Возраст:");
 // @ts-ignore
 process.stdin.once("data", d => {
 let n = Number(d);
-
+  
 if (n < 18) {
     console.log("Доступ запрещён");
 } else {
@@ -143,5 +143,5 @@ if (n < 18) {
     }
 }
   // @ts-ignore
-process.exit();
+  process.exit();
 });
