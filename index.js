@@ -160,3 +160,25 @@ console.log(ascending); // [2, 3, 10, 31]
 // По убыванию
 const descending = [...sortNumbers].sort((a, b) => b - a);
 console.log(descending); // [31, 10, 3, 2]
+const products = [
+    { name: "Laptop", price: 1000, inStock: true },
+    { name: "Mouse", price: 25, inStock: false },
+    { name: "Keyboard", price: 75, inStock: true },
+    { name: "Monitor", price: 300, inStock: true },
+    { name: "Webcam", price: 50, inStock: false }
+];
+// Товары в наличии
+const inStockProducts = products.filter(product => product.inStock);
+console.log(inStockProducts);
+// Массив цен
+const prices = products.map(product => product.price);
+console.log(prices);
+// Общая сумма товаров в наличии
+let total = 0;
+for (const product of inStockProducts) {
+    total += product.price;
+}
+console.log(total);
+// Сортировка по цене (от дешёвых к дорогим)
+const sortedProducts = [...inStockProducts].sort((a, b) => a.price - b.price);
+console.log(sortedProducts);
