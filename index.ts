@@ -155,3 +155,55 @@ function calculate(a: number, b: number, operator: string): number {
       default: throw new Error("Invalid operator");
     }
   }
+
+// 1. Создание массива и добавление элемента
+const numbers: number[] = [1, 2, 3];
+numbers.push(4);
+console.log(numbers); // [1, 2, 3, 4]
+
+// 2. Map - умножение на 10
+const nums: number[] = [1, 2, 3, 4];
+const multiplied = nums.map(num => num * 10);
+console.log(multiplied); // [10, 20, 30, 40]
+
+// 3. Filter - возраст 18+
+const ages: number[] = [15, 18, 21, 13, 30];
+const adults = ages.filter(age => age >= 18);
+console.log(adults); // [18, 21, 30]
+
+// 4. Find - поиск пользователя
+interface User {
+    name: string;
+    age: number;
+}
+
+const users: User[] = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 },
+    { name: "Charlie", age: 20 }
+];
+
+const foundUser = users.find(user => user.name === "Bob");
+console.log(foundUser || "Пользователь не найден");
+
+// 5. Filter + Map - положительные числа ×2
+const mixedNumbers: number[] = [5, -3, 12, 0, -7, 8];
+const positiveDoubled = mixedNumbers
+    .filter(num => num > 0)
+    .map(num => num * 2);
+console.log(positiveDoubled); // [10, 24, 16]
+
+// 6. Сортировка массивов
+const sortNumbers: number[] = [10, 31, 3, 2];
+
+// Как строки (по умолчанию)
+const defaultSort = [...sortNumbers].sort();
+console.log(defaultSort); // [10, 2, 3, 31]
+
+// По возрастанию
+const ascending = [...sortNumbers].sort((a, b) => a - b);
+console.log(ascending); // [2, 3, 10, 31]
+
+// По убыванию
+const descending = [...sortNumbers].sort((a, b) => b - a);
+console.log(descending); // [31, 10, 3, 2]

@@ -1,33 +1,33 @@
-var message = 'Hello World!';
-var age = 18;
-var isAdmin = true;
-var slovo;
+let message = 'Hello World!';
+let age = 18;
+let isAdmin = true;
+let slovo;
 slovo = 42;
 console.log("Число:", slovo, "Тип:", typeof slovo);
 slovo = "Hello World";
 console.log("Строка:", slovo, "Тип:", typeof slovo);
 slovo = true;
 console.log("Boolean:", slovo, "Тип:", typeof slovo);
-var a = 55;
-var b = 34;
+let a = 55;
+let b = 34;
 console.log(a + b);
 console.log(a - b);
-var c = 25;
-var d = 4;
-var suma = c + d;
+let c = 25;
+let d = 4;
+let suma = c + d;
 if (suma % 2 === 0) {
     console.log(suma, "является чётной");
 }
 else {
     console.log(suma, "является нечётной");
 }
-var score = 0;
+let score = 0;
 score++;
 score++;
 score++;
 score--;
 score--;
-var wallet = 1000;
+let wallet = 1000;
 console.log("Начало:", wallet);
 wallet += 200;
 console.log("+200:", wallet);
@@ -35,20 +35,20 @@ wallet *= 0.7;
 console.log("-30%:", wallet);
 wallet /= 2;
 console.log("÷2:", wallet);
-var speed = 40;
-var isRoadClear = false;
+let speed = 40;
+let isRoadClear = false;
 if (speed > 60 && !isRoadClear) {
     console.log("Опасно");
 }
 else {
     console.log("Можно ехать");
 }
-var sum = 0;
-for (var i = 1; i <= 10; i++) {
+let sum = 0;
+for (let i = 1; i <= 10; i++) {
     console.log(sum += i);
 }
-var hasKey = true;
-var knowsPassword = false;
+let hasKey = true;
+let knowsPassword = false;
 if (hasKey && knowsPassword) {
     console.log("Полный доступ");
 }
@@ -58,12 +58,12 @@ else if (hasKey || knowsPassword) {
 else {
     console.log("Доступ запрещён");
 }
-for (var i = 1; i <= 10; i++) {
+for (let i = 1; i <= 10; i++) {
     console.log(5 * i);
 }
-var n = 6;
-var factorial = 1;
-for (var i = 1; i <= n; i++) {
+let n = 6;
+let factorial = 1;
+for (let i = 1; i <= n; i++) {
     factorial *= i;
     console.log(i = factorial);
 }
@@ -101,14 +101,14 @@ console.log("1, 2:", compareNumbers(1, 2));
 console.log("2, 7:", compareNumbers(2, 7));
 console.log("Возраст:");
 // @ts-ignore
-process.stdin.once("data", function (d) {
-    var n = Number(d);
+process.stdin.once("data", d => {
+    let n = Number(d);
     if (n < 18) {
         console.log("Доступ запрещён");
     }
     else {
         console.log("Таблица умножения:");
-        for (var i = 1; i <= 10; i++) {
+        for (let i = 1; i <= 10; i++) {
             console.log(n + " × " + i + " = " + (n * i));
         }
     }
@@ -124,3 +124,39 @@ function calculate(a, b, operator) {
         default: throw new Error("Invalid operator");
     }
 }
+// 1. Создание массива и добавление элемента
+const numbers = [1, 2, 3];
+numbers.push(4);
+console.log(numbers); // [1, 2, 3, 4]
+// 2. Map - умножение на 10
+const nums = [1, 2, 3, 4];
+const multiplied = nums.map(num => num * 10);
+console.log(multiplied); // [10, 20, 30, 40]
+// 3. Filter - возраст 18+
+const ages = [15, 18, 21, 13, 30];
+const adults = ages.filter(age => age >= 18);
+console.log(adults); // [18, 21, 30]
+const users = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 },
+    { name: "Charlie", age: 20 }
+];
+const foundUser = users.find(user => user.name === "Bob");
+console.log(foundUser || "Пользователь не найден");
+// 5. Filter + Map - положительные числа ×2
+const mixedNumbers = [5, -3, 12, 0, -7, 8];
+const positiveDoubled = mixedNumbers
+    .filter(num => num > 0)
+    .map(num => num * 2);
+console.log(positiveDoubled); // [10, 24, 16]
+// 6. Сортировка массивов
+const sortNumbers = [10, 31, 3, 2];
+// Как строки (по умолчанию)
+const defaultSort = [...sortNumbers].sort();
+console.log(defaultSort); // [10, 2, 3, 31]
+// По возрастанию
+const ascending = [...sortNumbers].sort((a, b) => a - b);
+console.log(ascending); // [2, 3, 10, 31]
+// По убыванию
+const descending = [...sortNumbers].sort((a, b) => b - a);
+console.log(descending); // [31, 10, 3, 2]
