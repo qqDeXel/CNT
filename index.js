@@ -1,3 +1,12 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 let message = 'Hello World!';
 let age = 18;
 let isAdmin = true;
@@ -182,3 +191,37 @@ console.log(total);
 // Сортировка по цене (от дешёвых к дорогим)
 const sortedProducts = [...inStockProducts].sort((a, b) => a.price - b.price);
 console.log(sortedProducts);
+// Загрузка всех постов
+function loadPosts() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch('https://jsonplaceholder.typicode.com/posts');
+        return yield response.json();
+    });
+}
+// Загрузка поста по ID
+function loadPostById(id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+        return yield response.json();
+    });
+}
+// Выполнение запросов
+(() => __awaiter(this, void 0, void 0, function* () {
+    // Первый пост
+    const posts = yield loadPosts();
+    const firstPost = posts[0];
+    console.log(`ID: ${firstPost.id}\nTitle: ${firstPost.title}\nBody: ${firstPost.body}`);
+    // Пользователи с длинными именами
+    const usersResponse = yield fetch('https://jsonplaceholder.typicode.com/users');
+    const users = yield usersResponse.json();
+    const longNames = users.filter((user) => user.name.length > 10);
+    console.log(longNames.map((user) => user.name));
+    // Тексты постов
+    const postsResponse = yield fetch('https://jsonplaceholder.typicode.com/posts');
+    const allPosts = yield postsResponse.json();
+    const postBodies = allPosts.map((post) => post.body);
+    console.log(postBodies);
+    // Поиск поста по заголовку
+    const targetPost = allPosts.find((post) => post.title === "qui est esse");
+    console.log(targetPost || "Пост не найден");
+}))();

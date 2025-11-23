@@ -240,3 +240,46 @@ console.log(total);
 // Сортировка по цене (от дешёвых к дорогим)
 const sortedProducts = [...inStockProducts].sort((a, b) => a.price - b.price);
 console.log(sortedProducts);
+
+interface Post {
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+}
+
+// Загрузка всех постов
+async function loadPosts(): Promise<Post[]> {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    return await response.json();
+}
+
+// Загрузка поста по ID
+async function loadPostById(id: number): Promise<Post> {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    return await response.json();
+}
+
+// Выполнение запросов
+(async () => {
+    // Первый пост
+    const posts = await loadPosts();
+    const firstPost = posts[0];
+    console.log(`ID: ${firstPost.id}\nTitle: ${firstPost.title}\nBody: ${firstPost.body}`);
+
+    // Пользователи с длинными именами
+    const usersResponse = await fetch('https://jsonplaceholder.typicode.com/users');
+    const users = await usersResponse.json();
+    const longNames = users.filter((user: any) => user.name.length > 10);
+    console.log(longNames.map((user: any) => user.name));
+
+    // Тексты постов
+    const postsResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const allPosts = await postsResponse.json();
+    const postBodies = allPosts.map((post: Post) => post.body);
+    console.log(postBodies);
+
+    // Поиск поста по заголовку
+    const targetPost = allPosts.find((post: Post) => post.title === "qui est esse");
+    console.log(targetPost || "Пост не найден");
+})();
