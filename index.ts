@@ -283,3 +283,11 @@ async function loadPostById(id: number): Promise<Post> {
     const targetPost = allPosts.find((post: Post) => post.title === "qui est esse");
     console.log(targetPost || "Пост не найден");
 })();
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => response.json())
+  .then(posts => {
+    const userIds = Array.from(new Set(posts.map(post => post.userId)));
+    console.log(userIds);
+  })
+  .catch(err => console.error(err));
