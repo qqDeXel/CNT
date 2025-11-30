@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cnt-group';
+  operation: number = (15 + 7) * 3 - 10 / 2;
 }
