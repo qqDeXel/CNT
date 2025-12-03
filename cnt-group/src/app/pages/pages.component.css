@@ -7,11 +7,10 @@
 }
 
 main {
-  position: relative;
+  position: fixed;
   flex-grow: 1;
-  padding: 2.5rem;
+  padding: 1rem;
   box-shadow: inset 0 0 15px black;
-  height: 550px;
-  position: relative;
-  left: 50px;
+  height: 780px;
+  left: 200px;
 }
