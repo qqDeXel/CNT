@@ -19,6 +19,17 @@ export class MenuService {
             subMenuItems: []
           },
           {
+            idItem: 2,
+            itemName: 'Статистика',
+            itemLink: 'NULL',
+            iconTypeId: 1,
+            icon: null,
+            itemOrder: 2,
+            parentItem: 1,
+            showSubMenu: false,
+            subMenuItems: []
+          },
+          {
             idItem: 3,
             itemName: 'Мониторинг',
             itemLink: 'NULL',
@@ -26,6 +37,17 @@ export class MenuService {
             icon: null,
             itemOrder: null,
             parentItem: 5,
+            showSubMenu: false,
+            subMenuItems: []
+          },
+          {
+            idItem: 4,
+            itemName: 'Общая',
+            itemLink: 'mainPage/general-stats',
+            iconTypeId: 1,
+            icon: null,
+            itemOrder: 1,
+            parentItem: 2,
             showSubMenu: false,
             subMenuItems: []
           },
