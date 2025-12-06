@@ -9,6 +9,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { MenuParentsComponent } from './@theme/components/menu-parents/menu-parents.component';
 import { MenuChildrensComponent } from './@theme/components/menu-childrens/menu-childrens.component';
+import { ThemeSwitcherComponent } from './@theme/components/header/theme-switcher/theme-switcher.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MenuChildrensComponent } from './@theme/components/menu-childrens/menu-
     FooterComponent,
     SidebarComponent,
     MenuParentsComponent,
-    MenuChildrensComponent
+    MenuChildrensComponent,
+    ThemeSwitcherComponent
   ],
   imports: [
     BrowserModule,
