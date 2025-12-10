@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from './sections/main-page/main-page.component';
 import { PagesComponent } from './pages.component';
+import { ProjectComponent } from '../@theme/components/menu/components/project/project.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'mainPage',
         component: MainPageComponent
+      },
+      {
+        path: 'mainPage/project',
+        component: ProjectComponent
       },
       {
         path: 'administration',

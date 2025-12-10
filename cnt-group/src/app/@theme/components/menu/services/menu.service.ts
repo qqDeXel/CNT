@@ -84,6 +84,17 @@ export class MenuService {
       showSubMenu: false,
       subMenuItems: []
     },
+    {
+      idItem: 9,
+      itemName: 'Проект',
+      itemLink: 'mainPage/project',
+      iconTypeId: 1,
+      icon: null,
+      itemOrder: 2,
+      parentItem: 2,
+      showSubMenu: false,
+      subMenuItems: []
+    },
   ];
 
   private currentItemSubject = new BehaviorSubject<MenuItem>(this.menuItems[0]);
