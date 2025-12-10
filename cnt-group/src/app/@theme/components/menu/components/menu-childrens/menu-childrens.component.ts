@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { MenuService } from '../../services/menu.service';
+import { MenuItem } from '../../models/menu.model';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { MenuItem } from '../menu/models/menu.model';
-import { MenuService } from '../menu/services/menu.service';
 
 @Component({
   selector: 'app-menu-childrens',

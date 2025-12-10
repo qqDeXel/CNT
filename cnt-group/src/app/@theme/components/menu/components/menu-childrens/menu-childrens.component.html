@@ -6,19 +6,21 @@
       [ngClass]="{ 'show-children': subItem.showSubMenu }"
       tabindex="0">
 
-      <span>
-        {{ subItem.itemName }}
-        <span
-          *ngIf="menuService.getChildrenItems(subItem).length > 0"
-          (click)="toggleSubMenu(subItem)">
-          {{ subItem.showSubMenu ? '-' : '+'  }}
+      <a [routerLink]="subItem.itemLink"> </a>
+        <span>
+          {{ subItem.itemName }}
+          <span
+            *ngIf="menuService.getChildrenItems(subItem).length > 0"
+            (click)="toggleSubMenu(subItem)">
+            {{ subItem.showSubMenu ? '-' : '+' }}
+          </span>
         </span>
-      </span>
+
 
       <div class="submenu__children" *ngIf="subItem.showSubMenu">
         <app-menu-childrens [parentItem]="subItem"></app-menu-childrens>
       </div>
 
- </li>
+    </li>
   </ul>
 </div>

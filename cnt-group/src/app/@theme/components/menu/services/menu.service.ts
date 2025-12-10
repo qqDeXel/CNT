@@ -7,87 +7,87 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class MenuService {
   menuItems: MenuItem[] = [
-          {
-            idItem: 1,
-            itemName: 'Главная',
-            itemLink: 'mainPage',
-            iconTypeId: 1,
-            icon: null,
-            itemOrder: 1,
-            parentItem: null,
-            showSubMenu: false,
-            subMenuItems: []
-          },
-          {
-            idItem: 2,
-            itemName: 'Статистика',
-            itemLink: 'NULL',
-            iconTypeId: 1,
-            icon: null,
-            itemOrder: 2,
-            parentItem: 1,
-            showSubMenu: false,
-            subMenuItems: []
-          },
-          {
-            idItem: 3,
-            itemName: 'Мониторинг',
-            itemLink: 'NULL',
-            iconTypeId: 1,
-            icon: null,
-            itemOrder: null,
-            parentItem: 5,
-            showSubMenu: false,
-            subMenuItems: []
-          },
-          {
-            idItem: 4,
-            itemName: 'Общая',
-            itemLink: 'mainPage/general-stats',
-            iconTypeId: 1,
-            icon: null,
-            itemOrder: 1,
-            parentItem: 2,
-            showSubMenu: false,
-            subMenuItems: []
-          },
-          {
-            idItem: 5,
-            itemName: 'Dashboard',
-            itemLink: 'dashboard',
-            iconTypeId: 1,
-            icon: '',
-            itemOrder: 3,
-            parentItem: 1,
-            showSubMenu: false,
-            subMenuItems: []
-          },
-          {
-            idItem: 7,
-            itemName: 'Админ Панель',
-            itemLink: 'administration',
-            iconTypeId: 2,
-            icon: null,
-            itemOrder: 4,
-            parentItem: null,
-            showSubMenu: false,
-            subMenuItems: []
-          },
-          {
-            idItem: 8,
-            itemName: 'Пользователи',
-            itemLink: 'administration/users',
-            iconTypeId: 1,
-            icon: '',
-            itemOrder: 1,
-            parentItem: 7,
-            showSubMenu: false,
-            subMenuItems: []
-          }
-        ];
+    {
+      idItem: 1,
+      itemName: 'Главная',
+      itemLink: 'mainPage',
+      iconTypeId: 1,
+      icon: null,
+      itemOrder: 1,
+      parentItem: null,
+      showSubMenu: false,
+      subMenuItems: []
+    },
+    {
+      idItem: 2,
+      itemName: 'Статистика',
+      itemLink: 'NULL',
+      iconTypeId: 1,
+      icon: null,
+      itemOrder: 2,
+      parentItem: 1,
+      showSubMenu: false,
+      subMenuItems: []
+    },
+    {
+      idItem: 3,
+      itemName: 'Мониторинг',
+      itemLink: 'NULL',
+      iconTypeId: 1,
+      icon: null,
+      itemOrder: null,
+      parentItem: 5,
+      showSubMenu: false,
+      subMenuItems: []
+    },
+    {
+      idItem: 4,
+      itemName: 'Общая',
+      itemLink: 'mainPage/general-stats',
+      iconTypeId: 1,
+      icon: null,
+      itemOrder: 1,
+      parentItem: 2,
+      showSubMenu: false,
+      subMenuItems: []
+    },
+    {
+      idItem: 5,
+      itemName: 'Dashboard',
+      itemLink: 'dashboard',
+      iconTypeId: 1,
+      icon: '',
+      itemOrder: 3,
+      parentItem: 1,
+      showSubMenu: false,
+      subMenuItems: []
+    },
+    {
+      idItem: 7,
+      itemName: 'Админ Панель',
+      itemLink: 'administration',
+      iconTypeId: 2,
+      icon: null,
+      itemOrder: 4,
+      parentItem: null,
+      showSubMenu: false,
+      subMenuItems: []
+    },
+    {
+      idItem: 8,
+      itemName: 'Пользователи',
+      itemLink: 'administration/users',
+      iconTypeId: 1,
+      icon: '',
+      itemOrder: 1,
+      parentItem: 7,
+      showSubMenu: false,
+      subMenuItems: []
+    },
+  ];
 
   private currentItemSubject = new BehaviorSubject<MenuItem>(this.menuItems[0]);
-currentItem$ = this.currentItemSubject.asObservable();
+  currentItem$ = this.currentItemSubject.asObservable();
 
   constructor() { }
 
@@ -99,9 +99,7 @@ currentItem$ = this.currentItemSubject.asObservable();
     return this.menuItems.filter(subItem => subItem.parentItem === selectedItem.idItem);
   }
 
-  // Обновляем currentItemSubject.
   setCurrentItem(item: MenuItem): void {
     this.currentItemSubject.next(item);
   }
-
 }

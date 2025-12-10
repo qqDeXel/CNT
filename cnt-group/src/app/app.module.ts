@@ -5,11 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { HeaderComponent } from './@theme/components/header/header.component';
-import { FooterComponent } from './pages/footer/footer.component';
-import { SidebarComponent } from './pages/sidebar/sidebar.component';
-import { MenuParentsComponent } from './@theme/components/menu-parents/menu-parents.component';
-import { MenuChildrensComponent } from './@theme/components/menu-childrens/menu-childrens.component';
-import { ThemeSwitcherComponent } from './@theme/components/header/theme-switcher/theme-switcher.component';
+import { FooterComponent } from './@theme/components/footer/footer.component';
+import { SidebarComponent } from './@theme/components/sidebar/sidebar.component';
+import { MenuParentsComponent } from './@theme/components/menu/components/menu-parents/menu-parents.component';
+import { MenuChildrensComponent } from './@theme/components/menu/components/menu-childrens/menu-childrens.component';
+import { ThemeSwitcherComponent } from './@theme/components/header/theme/theme-switcher/theme-switcher.component';
+import { MainPageComponent } from './pages/sections/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ThemeSwitcherComponent } from './@theme/components/header/theme-switche
     SidebarComponent,
     MenuParentsComponent,
     MenuChildrensComponent,
-    ThemeSwitcherComponent
+    ThemeSwitcherComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
