@@ -49,6 +49,10 @@
         <small *ngIf="getFieldErrors('userBirthday')?.['tooYoung']">Возраст должен быть не менее 12 лет</small>
       </div>
     </div>
+    <div class="form-group">
+      <label for="userEnabled">Активен:</label>
+      <input type="checkbox" id="userEnabled" formControlName="userEnabled">
+    </div>
     <button type="submit" [disabled]="addUserForm.invalid">Добавить</button>
   </form>
 </main>
