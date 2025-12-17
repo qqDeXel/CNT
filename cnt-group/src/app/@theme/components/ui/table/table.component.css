@@ -15,3 +15,39 @@ th {
 td {
   background-color: var(--block-child-background);
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr {
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: #696868;
+}
+
+tr.selected {
+  background-color: #696868; /* Более темный цвет для выделенной строки */
+}
+
+.selected-row td {
+  background-color: #696868 ; /* Цвет для всех ячеек выделенной строки */
+}
+
+.selected-row:hover td {
+  background-color: #696868 ; /* Цвет при наведении на выделенную строку */
+}
+
+/* Убираем чередование цветов для выделенной строки */
+.selected-row {
+  background-color: transparent ;
+}

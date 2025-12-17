@@ -8,6 +8,7 @@
     <app-table
       [columnHeaders]="['id', 'Логин', 'Пароль', 'Enabled', 'Имя', 'Фамилия', 'Отчество', 'Дата регистрации', 'Дата рождения']"
       [data]="users"
+      [selectedRowId]="selectedRowId"
       (rowClick)="onUserSelect($event)">
     </app-table>
   </div>
