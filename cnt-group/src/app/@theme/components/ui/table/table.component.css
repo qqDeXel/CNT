@@ -1,53 +1,21 @@
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  border: 1px solid var(--block-child-border-color);
-  padding: 8px;
-}
-
-th {
-  background-color: var(--block-background);
-}
-
-td {
-  background-color: var(--block-child-background);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-tr {
-  cursor: pointer;
-}
-
-tr:hover {
-  background-color: #696868;
-}
-
-tr.selected {
-  background-color: #696868; /* Более темный цвет для выделенной строки */
-}
-
-.selected-row td {
-  background-color: #696868 ; /* Цвет для всех ячеек выделенной строки */
-}
-
-.selected-row:hover td {
-  background-color: #696868 ; /* Цвет при наведении на выделенную строку */
-}
-
-/* Убираем чередование цветов для выделенной строки */
 .selected-row {
-  background-color: transparent ;
+  background-color: #e0e0e0 !important;
+  font-weight: bold;
+}
+
+.selected-row:hover {
+  background-color: #d0d0d0 !important;
+}
+
+/* Цвета для ролей */
+.red {
+  background-color: #ffcccc !important;
+}
+
+.blue {
+  background-color: #cce5ff !important;
+}
+
+.yellow {
+  background-color: #fff3cd !important;
 }

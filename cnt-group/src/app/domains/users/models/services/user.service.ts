@@ -20,7 +20,7 @@ export class UserService {
   constructor() {}
 
   getUserRoles(userId: string | number): Observable<string[]> {
-    return of(this.roles[userId] || []);
+    return of(this.roles[userId.toString()] || []);
   }
 
   updateUserRoles(userId: string | number, roles: string[]): Observable<any> {

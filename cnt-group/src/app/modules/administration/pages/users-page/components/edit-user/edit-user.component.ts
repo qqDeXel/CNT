@@ -87,16 +87,20 @@ export class EditUserComponent implements OnInit, OnChanges {
     }
   }
   onSubmitRoles() {
-    if (this.selectedUser) {
-      const roles = [];
-      if (this.isAdmin) roles.push('admin');
-      if (this.isStudent) roles.push('student');
-      this.userService.updateUserRoles(this.selectedUser.userId, roles).subscribe((response: any) => {
+    if (!this.selectedUser) return; // Добавляем проверку на null
+
+    const roles = [];
+    if (this.isAdmin) roles.push('admin');
+    if (this.isStudent) roles.push('student');
+
+    this.userService.updateUserRoles(this.selectedUser.userId, roles).subscribe({
+      next: (response) => {
         console.log('Roles updated:', response);
-      }, (error: any) => {
+      },
+      error: (error) => {
         console.error('Error updating roles:', error);
-      });
-    }
+      }
+    });
   }
 
   // обязательное форматирование даты для birthday
