@@ -1,5 +1,8 @@
+// app.module.ts
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'; // ← добавить
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +34,7 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule, // ← добавить
     SharedModule,
     PagesRoutingModule
   ],
