@@ -9,7 +9,7 @@
   padding: 1rem;
   border-bottom: 1px solid var(--block-border-color);
 
-  background: var(--block-background);
+  background: #ba18c0a4;
 }
 
 .main-header__logo-contain {

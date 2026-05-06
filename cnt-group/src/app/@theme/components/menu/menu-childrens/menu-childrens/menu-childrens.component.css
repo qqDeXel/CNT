@@ -26,7 +26,7 @@
   flex-direction: column;
   transition: all 0.3s ease;
   cursor: pointer;
-  background-color: var(--block-child-background, transparent);
+  background-color: #18c02ea4;
   border: 1px solid var(--block-child-border-color, transparent);
   border-radius: 6px;
   margin-bottom: 8px;

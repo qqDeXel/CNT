@@ -12,7 +12,7 @@
 
 .nav-list>li>a {
   text-decoration: none;
-  color: var(--color-indigo-500);
+  color: #ba18c0a4;
   font-size: 16px;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -23,11 +23,11 @@
 }
 
 .nav-list li>a:hover {
-  color: rgb(48, 63, 159);
+  color: #d543daa4;
 }
 
 .nav-list li>a.active {
-  color: rgb(48, 63, 159);
+  color: #ba18c0a4;
   font-weight: 600;
 }
 
@@ -38,7 +38,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: rgb(48, 63, 159);
+  background-color: rgb(48, 159, 159);
   transition: width 0.3s ease;
 }
 
@@ -48,5 +48,5 @@
 
 .nav-list>li>a.active::after {
   width: 100%;
-  background-color: rgb(48, 63, 159);
+  background-color: #ba18c0a4;
 }
