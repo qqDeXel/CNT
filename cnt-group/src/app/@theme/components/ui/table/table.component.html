@@ -8,8 +8,11 @@
     <tr
       *ngFor="let row of data; let i = index"
       (click)="onRowClick(row)"
-      [ngClass]="{ 'selected-row': isRowSelected(row) }"
-      [style.background]="getRowColor(row) || (i % 2 === 0 ? 'var(--block-child-background)' : 'var(--block-background)')">
+      [ngClass]="{
+        'selected-row': isRowSelected(row),
+        'even-row': !isRowSelected(row) && i % 2 === 0,
+        'odd-row': !isRowSelected(row) && i % 2 === 1
+      }">
       <td *ngFor="let header of dataKeys">
         {{ row[header] }}
       </td>

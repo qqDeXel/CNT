@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from 'src/app/domains/users/models/services/user.service';
 import { UserRegister } from 'src/app/domains/users/models/user.model';
+import { UserService } from 'src/app/domains/users/services/user.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -54,14 +54,16 @@ export class EditUserComponent implements OnInit, OnChanges {
       this.loadUserRoles();
     }
   }
+
   loadUserRoles() {
-    if (this.selectedUser) {
-      this.userService.getUserRoles(this.selectedUser.userId).subscribe((roles: string | string[]) => {
-        this.isAdmin = roles.includes('admin');
-        this.isStudent = roles.includes('student');
-      });
-    }
+  if (this.selectedUser) {
+    this.userService.getUserRoles(this.selectedUser.userId).subscribe(roles => {
+      this.isAdmin = roles.includes('admin');
+      this.isStudent = roles.includes('student');
+    });
   }
+}
+
   // получение ошибок валидации
   getFieldErrors(field: string) {
     return this.editUserForm.get(field)?.errors;
@@ -79,29 +81,26 @@ export class EditUserComponent implements OnInit, OnChanges {
   }
 
   onRoleChange(role: string, event: any) {
-    const isChecked = event.target.checked;
-    if (role === 'admin') {
-      this.isAdmin = isChecked;
-    } else if (role === 'student') {
-      this.isStudent = isChecked;
-    }
+  const isChecked = event.target.checked;
+  if (role === 'admin') {
+    this.isAdmin = isChecked;
+  } else if (role === 'student') {
+    this.isStudent = isChecked;
   }
-  onSubmitRoles() {
-    if (!this.selectedUser) return; // Добавляем проверку на null
+}
 
+onSubmitRoles() {
+  if (this.selectedUser) {
     const roles = [];
     if (this.isAdmin) roles.push('admin');
     if (this.isStudent) roles.push('student');
-
-    this.userService.updateUserRoles(this.selectedUser.userId, roles).subscribe({
-      next: (response) => {
-        console.log('Roles updated:', response);
-      },
-      error: (error) => {
-        console.error('Error updating roles:', error);
-      }
+    this.userService.updateUserRoles(this.selectedUser.userId, roles).subscribe(response => {
+      console.log('Roles updated:', response);
+    }, error => {
+      console.error('Error updating roles:', error);
     });
   }
+}
 
   // обязательное форматирование даты для birthday
   formatDate(date: string | Date | undefined): string {

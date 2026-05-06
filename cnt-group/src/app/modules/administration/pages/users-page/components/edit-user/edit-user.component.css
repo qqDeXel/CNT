@@ -9,9 +9,6 @@ header {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   width: 100%;
   padding: 1rem;
 }
@@ -56,13 +53,10 @@ button {
   color: var(--text-color);
 }
 
-button {
-  padding: 8px;
-  outline: none;
-  border: none;
-  border-radius: 7px;
-  background-color: var(--color-indigo-500);
-  color: rgb(233, 233, 233);
-  font-size: 15px;
-  cursor: pointer;
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
 }

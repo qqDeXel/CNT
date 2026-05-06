@@ -1,5 +1,6 @@
 <header>Редактировать пользователя</header>
 <main>
+  <!-- Форма редактирования пользователя -->
   <form [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
     <div>
       <input
@@ -91,23 +92,27 @@
       </div>
     </div>
     <button type="submit">Обновить пользователя</button>
-    <!-- Блок для изменения ролей -->
-<form (ngSubmit)="onSubmitRoles()">
-  <label>
-    <input
-      type="checkbox"
-      [checked]="isAdmin"
-      (change)="onRoleChange('admin', $event)">
-    Админ
-  </label>
-  <label>
-    <input
-      type="checkbox"
-      [checked]="isStudent"
-      (change)="onRoleChange('student', $event)">
-    Студент
-  </label>
-  <button type="submit">Сохранить роли</button>
-</form>
+  </form>
+
+  <!-- Блок для изменения ролей -->
+  <form (ngSubmit)="onSubmitRoles()">
+    <h3>Роли пользователя</h3>
+    <label>
+      <input
+        type="checkbox"
+        [checked]="isAdmin"
+        (change)="onRoleChange('admin', $event)"
+      />
+      Админ
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        [checked]="isStudent"
+        (change)="onRoleChange('student', $event)"
+      />
+      Студент
+    </label>
+    <button type="submit">Сохранить роли</button>
   </form>
 </main>

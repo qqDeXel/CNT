@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MenuItem } from '../models/menu.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { MenuItem } from '../../models/menu.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +21,11 @@ export class MenuService {
     {
       idItem: 2,
       itemName: 'Статистика',
-      itemLink: 'NULL',
+      itemLink: null,
       iconTypeId: 1,
       icon: null,
       itemOrder: 2,
-      parentItem: 1,
+      parentItem: null,
       showSubMenu: false,
       subMenuItems: []
     },
@@ -37,17 +37,6 @@ export class MenuService {
       icon: null,
       itemOrder: null,
       parentItem: 5,
-      showSubMenu: false,
-      subMenuItems: []
-    },
-    {
-      idItem: 4,
-      itemName: 'Общая',
-      itemLink: 'mainPage/general-stats',
-      iconTypeId: 1,
-      icon: null,
-      itemOrder: 1,
-      parentItem: 2,
       showSubMenu: false,
       subMenuItems: []
     },
@@ -84,17 +73,29 @@ export class MenuService {
       showSubMenu: false,
       subMenuItems: []
     },
+    // НОВЫЙ ПУНКТ "АДМИНЫ"
     {
-      idItem: 9,
-      itemName: 'Проект',
-      itemLink: 'mainPage/project',
+      idItem: 10,
+      itemName: 'Админы',
+      itemLink: 'administration/admins',
       iconTypeId: 1,
-      icon: null,
+      icon: '<svg class="menuIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>',
       itemOrder: 2,
-      parentItem: 2,
+      parentItem: 7,
       showSubMenu: false,
       subMenuItems: []
     },
+    {
+      idItem: 9,
+      itemName: 'Общая',
+      itemLink: 'statistics/general',
+      iconTypeId: 1,
+      icon: '',
+      itemOrder: 1,
+      parentItem: 2,
+      showSubMenu: false,
+      subMenuItems: []
+    }
   ];
 
   private currentItemSubject = new BehaviorSubject<MenuItem>(this.menuItems[0]);

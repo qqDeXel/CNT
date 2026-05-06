@@ -2,7 +2,7 @@ export interface UserRegister {
   userId: string | number;
   userLogin: string;
   userPassword: string;
-  userEnabled: boolean;
+  userEnabled: string | number;
   userFirstName: string;
   userLastName: string;
   userPatronymic: string;
