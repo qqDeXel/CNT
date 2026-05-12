@@ -4,8 +4,8 @@ from mysql.connector import Error
 DB_CONFIG = dict(
     host="localhost",  # localhost
     user="root",  # логин от базы
-    password="Azaz1234@",  # пароль от базы
-    database="palyan",  # имя базы
+    password="D270606Den.",  # пароль от базы
+    database="raichuk",  # имя базы
     charset="utf8",
     autocommit=True,
 )
@@ -60,7 +60,7 @@ def create_admin(admin_data):
         try:
             cursor = connection.cursor()
             query = """
-            INSERT INTO admins (username, email, password, full_name, is_active) 
+            INSERT INTO admins (username, email, password, full_name, is_active)
             VALUES (%s, %s, %s, %s, %s)
             """
             cursor.execute(query, (

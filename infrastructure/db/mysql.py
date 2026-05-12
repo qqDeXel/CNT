@@ -5,7 +5,7 @@ import pymysql
 from pymysql.connections import Connection
 
 try:
-    from .mysql_local import DB_CONFIG  # файл локальный и в .gitignore
+    from .mysql_local import DB_CONFIG
 except ImportError as e:
     raise RuntimeError(
         "Нет локального конфига БД. Создай файл "
