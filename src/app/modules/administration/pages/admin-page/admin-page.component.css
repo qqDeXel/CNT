@@ -1,59 +1,77 @@
-.users-page__header {
-  width: 100%;
-  height: 57px;
+.admin-layout {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+  min-height: 100%;
+  background-color: #4e4e4e;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.admin-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1rem;
-  background-color: var(--block-background);
-  border: 1px solid var(--block-border-color);
 }
 
-.users-page__header>p {
-  font-size: 28px;
-  color: var(--color-indigo-500);
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #0080ff;
 }
 
-.users-page__content {
+.sidebar-nav {
   display: flex;
-  height: 100%;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 0.75rem;
 }
 
-.users-page__table-wrapper {
-  width: 70%;
-  background-color: var(--block-background);
-}
-
-.users-page__aside {
-  width: 30%;
-  background-color: var(--block-background);
-}
-
-.users-page__aside>header {
+.nav-item {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 70px;
-  border-bottom: 1px solid var(--block-border-color);
-  padding: 1rem;
-  font-size: 25px;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #0073ff;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-bottom: 2px;
 }
 
-.users-page__aside>main {
-  width: 100%;
-  padding: 1rem;
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  transform: translateX(2px);
 }
 
-.users-page__header>button {
-  font-size: 14px;
-  padding: 7px;
-  border-radius: 7px;
-  color: white;
-  outline: none;
-  background-color: var(--block-child-background);
-  border: 1px solid var(--block-child-border-color);
-  color: var(--text-color);
-  cursor: pointer;
+.active-link {
+  background-color: #3b82f6;
+  color: rgb(255, 0, 0) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.active-link:hover {
+  background-color: #2563eb;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #3b82f6;
+  overflow-y: auto;
 }
